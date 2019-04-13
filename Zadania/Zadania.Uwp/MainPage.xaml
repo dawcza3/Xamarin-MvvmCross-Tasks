@@ -1,0 +1,35 @@
+﻿<local:BasePage
+    x:Class="Zadania.Uwp.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Zadania.Uwp"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <StackPanel Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock HorizontalAlignment="Left" Margin="12,0,12,0">Dodaj Zadanie:</TextBlock>
+        <TextBox 
+            Text="{Binding Work,Mode=TwoWay}"
+            VerticalAlignment="Center"
+            Margin="12,12,12,12" />
+
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <CalendarDatePicker 
+                    DateFormat="{}{day.integer} {month.full} {year.full}"
+                    Date="{Binding Date,Mode=TwoWay,Converter={StaticResource NativeDateConverter}}"
+                    Margin="12,12,12,12"
+                    />
+            <TimePicker 
+                ClockIdentifier="24HourClock"
+                    Time="{Binding Time,Mode=TwoWay}"
+                    Margin="12,12,12,12"
+                    />
+        </StackPanel>
+        <Button VerticalAlignment="Center" HorizontalAlignment="Center"
+                Margin="12,12,12,12"
+                Command="{Binding AddWorkCommand}"
+                Content="Dodaj Zadanie"/>
+
+    </StackPanel>
+</local:BasePage>

@@ -1,0 +1,11 @@
+﻿<Application
+    x:Class="Zadania.Uwp.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Zadania.Uwp"
+    xmlns:converters="using:Zadania.Uwp.NativeConverters"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <converters:DateNativeConverter x:Key="NativeDateConverter" />
+    </Application.Resources>
+</Application>
